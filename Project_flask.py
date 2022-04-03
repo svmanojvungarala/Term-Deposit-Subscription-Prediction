@@ -7,7 +7,7 @@ model = pickle.load(open('output.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('SML_Project.html')
+    return render_template('Project.html')
 
 @app.route('/y_predict',methods=['POST'])
 def y_predict():
@@ -19,7 +19,7 @@ def y_predict():
     prediction = model.predict(x_test)
     print(prediction)
     output=prediction[0]
-    return render_template('SML_Project.html', 
+    return render_template('Project.html', 
   prediction_text=
   'The chance of Subscription (1.0-Yes / 0.0-No) {}'.format(output))
 
